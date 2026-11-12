@@ -30,6 +30,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
+          file: ./docker/Dockerfile_prod
           push: true
           tags: 1sibo18/microblog:${{ env.VERSION }}
           build-args: |
