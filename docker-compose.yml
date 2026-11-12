@@ -8,8 +8,11 @@ services:
       MYSQL_PASSWORD: 1sibo18
 
   prod:
-    image: 1sibo18/microblog:11.0.1
-
+    build:
+      context: .
+      dockerfile: docker/Dockerfile_prod
+      args:
+        APP_VERSION: ${APP_VERSION:-unknown}
     ports:
       - "8000:5000"
 
@@ -31,6 +34,7 @@ services:
 
     environment:
       DATABASE_URL: mysql+pymysql://microblog:1sibo18@mysql/microblog
+      PYTHONDONTWRITEBYTECODE: 1
 
     depends_on:
       - mysql
