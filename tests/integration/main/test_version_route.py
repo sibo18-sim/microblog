@@ -20,4 +20,4 @@ def test_version_route_custom_value(client, test_app):
     response = client.get('/version')
 
     assert response.status_code == 200
-    assert response.data == b'v11.0.0'
+    assert response.data == b'v.11.0.0'
