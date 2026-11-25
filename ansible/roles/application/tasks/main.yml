@@ -23,4 +23,4 @@
       - "8000:5000"
     env:
       SECRET_KEY: my-secret-key
-      DATABASE_URL: "mysql+pymysql://microblog:1sibo18@{{ domain_name }}/microblog"
+      DATABASE_URL: "mysql+pymysql://microblog:microblogpassword@{{ domain_name }}/microblog"
