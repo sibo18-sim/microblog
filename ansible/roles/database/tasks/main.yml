@@ -20,6 +20,9 @@
     state: started
     restart_policy: unless-stopped
 
+    ports:
+      - "3306:3306"
+
     env:
       MYSQL_ROOT_PASSWORD: rootpassword
       MYSQL_DATABASE: microblog
