@@ -73,11 +73,11 @@ help:
 
 
 
-# target: add-ssh key                        - Add ssh key to agent
+# target: add-ssh                         - Add ssh key to agent
 .PHONY: add-ssh
 add-ssh:
 	eval `ssh-agent -s`
-	ssh-add /home/sibo18/.ssh/id_rsa
+	ssh-add /home/dev/.ssh/id_rsa
 
 
 
