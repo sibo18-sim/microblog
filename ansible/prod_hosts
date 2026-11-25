@@ -1,0 +1,9 @@
+[local]
+localhost ansible_connection=local
+
+[appserver]
+appserver1.sibo.arnesson.dev
+appserver2.sibo.arnesson.dev
+
+[loadbalancer]
+sibo.arnesson.dev
