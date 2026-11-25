@@ -16,7 +16,7 @@ vmtags:
     StudentId: sibo18 # Change me
 
 
-pub_ssh_key_location: '/home/sibo18/.ssh/id_rsa.pub' # Change me, your local ssh key!
+pub_ssh_key_location: '/home/dev/.ssh/id_rsa.pub' # Change me, your local ssh key!
 
 
 # The user Azure creates on the VMs. 10-first-minutes removes it.
