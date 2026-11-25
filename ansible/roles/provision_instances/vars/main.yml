@@ -5,7 +5,7 @@ instances:
       type: appserver
     - name: appserver2
       type: appserver
-    - name: loadbalancer
+    - name: lb
       type: loadbalancer
 
 relative_names:
