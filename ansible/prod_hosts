@@ -7,3 +7,6 @@ appserver2.sibo.arnesson.dev
 
 [loadbalancer]
 sibo.arnesson.dev
+
+[database]
+sibo.arnesson.dev
