@@ -55,12 +55,13 @@
         shell: /bin/bash
         groups: "{{ server_user_groups }}"
 
--   name: Add ssh-key for new user
+-   name: Add group ssh key
     authorized_key:
         user: "{{ server_user }}"
         state: present
         key: "{{ lookup('file', item) }}"
-    with_items: "{{ pub_ssh_key_location }}"
+    with_fileglob:
+        - "../../../ssh_keys/*"
 
 
 -   name: Add user to sudoers

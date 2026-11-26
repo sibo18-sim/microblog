@@ -1,0 +1,26 @@
+---
+- name: Install Docker
+  apt:
+    name:
+      - docker.io
+      - python3-docker
+    state: present
+    update_cache: yes
+
+- name: Start and enable Docker
+  service:
+    name: docker
+    state: started
+    enabled: true
+
+- name: Start Microblog container
+  community.docker.docker_container:
+    name: microblog
+    image: "1sibo18/microblog:{{ app_version }}"
+    state: started
+    restart_policy: unless-stopped
+    ports:
+      - "8000:5000"
+    env:
+      SECRET_KEY: my-secret-key
+      DATABASE_URL: "mysql+pymysql://microblog:microblogpassword@{{ domain_name }}/microblog"
