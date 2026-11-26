@@ -16,7 +16,7 @@
 - name: Start Microblog container
   community.docker.docker_container:
     name: microblog
-    image: 1sibo18/microblog:11.0.1
+    image: "1sibo18/microblog:{{ app_version }}"
     state: started
     restart_policy: unless-stopped
     ports:
