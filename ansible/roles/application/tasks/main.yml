@@ -1,4 +1,19 @@
 ---
+
+- name: Fetch tags from GitHub API
+  uri:
+    url: "https://api.github.com/repos/sibo18-sim/microblog/tags"
+    return_content: true
+  register: tags
+  delegate_to: localhost
+  become: false
+  when: app_version is not defined
+
+- name: Get latest app version
+  set_fact:
+    app_version: "{{ tags.json[0].name | regex_replace('^v', '') }}"
+  when: app_version is not defined
+
 - name: Install Docker
   apt:
     name:
