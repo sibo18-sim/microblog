@@ -28,4 +28,4 @@ server_user_groups:
 
 # Let's Encrypt only gives 5 real certificates a week for the same domain. Use true while you build and test,
 # the certificate is then not trusted by browsers. Use false when everything works to get a real certificate.
-certbot_staging: true
+certbot_staging: false
