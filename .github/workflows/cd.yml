@@ -61,4 +61,4 @@ jobs:
 
         - name: Run the playbook
           working-directory: ansible
-          run: ansible-playbook -i prod_hosts deploy_application.yml --private-key ~/.ssh/id_ed25519 -e "app_version=${{ needs.build-and-push.outputs.version }}"
+          run: ansible-playbook -i prod_hosts deploy_application.yml --private-key ~/.ssh/id_ed25519 -e "app_version=${GITHUB_REF#refs/tags/v}"
